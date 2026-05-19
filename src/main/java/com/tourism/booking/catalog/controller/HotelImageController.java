@@ -50,6 +50,7 @@ public class HotelImageController {
                 .contentType(mediaType)
                 .body(resource);
     }
+
     @Operation(summary = "Upload hotel image")
     @PostMapping(value = "/{hotelId}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadHotelImage(
@@ -68,4 +69,3 @@ public class HotelImageController {
         return ResponseEntity.ok(imagePath);
     }
 }
-
