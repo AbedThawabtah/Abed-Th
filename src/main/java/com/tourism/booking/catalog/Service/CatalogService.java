@@ -11,13 +11,23 @@ import java.util.List;
 
 public interface CatalogService {
     HotelResponse createHotel(HotelRequest request);
-    PagedResponse<HotelResponse> browseHotels(String city, Integer minStars,String nameContains, Pageable pageable);
+
+    PagedResponse<HotelResponse> browseHotels(String city, Integer minStars, String nameContains, Pageable pageable);
+
     HotelResponse getHotelById(Long hotelId, boolean includeRoomTypes);
+
     HotelResponse updateHotel(Long hotelId, HotelRequest request);
+
     void deleteHotel(Long hotelId);
+
     HotelResponse uploadHotelImage(Long hotelId, org.springframework.web.multipart.MultipartFile image);
+
     RoomTypeResponse createRoomType(Long hotelId, RoomTypeRequest request);
+
     List<RoomTypeResponse> getRoomTypesByHotel(Long hotelId);
+
     RoomTypeResponse updateRoomType(Long roomTypeId, RoomTypeRequest request);
+
     void deleteRoomType(Long roomTypeId);
+
 }
